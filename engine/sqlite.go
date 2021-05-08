@@ -5,11 +5,11 @@ import (
 	"gorm.io/gorm"
 )
 
-type Sqlite struct {
+type MSqlite struct {
 	Path string
 	Name string
 }
 
-func (this *Sqlite) DSN() gorm.Dialector {
+func (this *MSqlite) DSN() gorm.Dialector {
 	return sqlite.Open(this.Path + "/" + this.Name)
 }
